@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PersonalPortfolio/static/css/main.fc3ccc40.css",
+    "main.js": "/PersonalPortfolio/static/js/main.adc296bc.js",
+    "index.html": "/PersonalPortfolio/index.html",
+    "main.fc3ccc40.css.map": "/PersonalPortfolio/static/css/main.fc3ccc40.css.map",
+    "main.adc296bc.js.map": "/PersonalPortfolio/static/js/main.adc296bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc3ccc40.css",
+    "static/js/main.adc296bc.js"
+  ]
+}
