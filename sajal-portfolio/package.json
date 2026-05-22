@@ -2,7 +2,7 @@
   "name": "sajal-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sajalNagalkar30.github.io/PersonalPortfolio",
+  "homepage": "https://sajalnagalkar30.github.io/PersonalPortfolio",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
