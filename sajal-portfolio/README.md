@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Sajal Nagalkar — Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio website built with React showcasing my skills, experience, projects, and achievements.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+> Coming soon
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Responsive design for all screen sizes
+- Smooth scroll animations
+- Typing effect in hero section
+- Sections: Hero, About, Skills, Experience, Projects, Achievements, Services, Education, Contact
+- Scroll to top button
+- Clean and minimal UI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **React 19**
+- **React Icons**
+- **CSS3** (custom stylesheets per section)
+- **Create React App**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+sajal-portfolio/
+├── public/
+│   ├── index.html
+│   └── manifest.json
+├── src/
+│   ├── components/       # UI components (Navbar, Hero, About, etc.)
+│   ├── data/             # Static data (skills, projects, experience, etc.)
+│   ├── hooks/            # Custom React hooks
+│   ├── styles/           # CSS files per section
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js >= 14
+- npm >= 6
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Clone the repository
+git clone https://github.com/sajalNagalkar30/PersonalPortfolio.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Navigate into the project
+cd PersonalPortfolio/sajal-portfolio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Start the development server
+npm start
+```
 
-## Learn More
+The app will open at `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Build for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
+## Sections
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Section      | Description                                      |
+|--------------|--------------------------------------------------|
+| Hero         | Introduction with typing effect                  |
+| About        | Brief bio and personal summary                   |
+| Skills       | Technical skills with icons                      |
+| Experience   | Work history and roles                           |
+| Projects     | Highlighted personal and professional projects   |
+| Achievements | Certifications and accomplishments               |
+| Services     | Services offered                                 |
+| Education    | Academic background                              |
+| Contact      | Contact form and social links                    |
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Sajal Nagalkar**
+- GitHub: [@sajalNagalkar30](https://github.com/sajalNagalkar30)
+- Email: sajal.nagalkar@paritycube.com
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source and available under the [MIT License](LICENSE).
