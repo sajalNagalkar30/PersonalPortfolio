@@ -17,18 +17,19 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnopLOvmqOdMrCdVMAZDPqtQtpz-KToRTGL298rZAr9w-pS-mbEXEAB_5BJOBEOAcY/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9IGMjowQpnuEltVi8je8UoDi18mqHSkYCtCcyuQ1IY5tKV2Lqj5ev70a_uORziY4/exec';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await fetch(APPS_SCRIPT_URL, {
+      const response = await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }),
       });
+      const result = await response.json();
+      if (result.result !== 'success') throw new Error(result.message);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', phone: '', message: '' });
     } catch (err) {
