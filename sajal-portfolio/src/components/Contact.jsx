@@ -17,7 +17,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9IGMjowQpnuEltVi8je8UoDi18mqHSkYCtCcyuQ1IY5tKV2Lqj5ev70a_uORziY4/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzWi_l994S0_OVinif8wRM4893cfOF7-w9n0CJNNr-n2jGI_0nOk0CfwJ57IusJw4Nz/exec';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
