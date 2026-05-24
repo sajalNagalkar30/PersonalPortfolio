@@ -23,13 +23,19 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch(APPS_SCRIPT_URL, {
+      const params = new URLSearchParams();
+      params.append('name', formData.name);
+      params.append('email', formData.email);
+      params.append('subject', formData.subject);
+      params.append('phone', formData.phone || '-');
+      params.append('message', formData.message);
+      params.append('timestamp', new Date().toISOString());
+
+      await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }),
+        mode: 'no-cors',
+        body: params,
       });
-      const result = await response.json();
-      if (result.result !== 'success') throw new Error(result.message);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', phone: '', message: '' });
     } catch (err) {
