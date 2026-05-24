@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaRocket, FaFileAlt } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { personalInfo } from '../data/personalInfo';
@@ -7,6 +7,8 @@ import { personalInfo } from '../data/personalInfo';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { scrolled, activeSection } = useScrollAnimation();
+  const location = useLocation();
+  const isHome = location.pathname === '/' || location.pathname === '';
 
   const navLinks = [
     { name: 'Home', id: 'home' },
@@ -17,23 +19,39 @@ const Navbar = () => {
     { name: 'Services', id: 'services' },
   ];
 
+  const scrollToSection = (id) => {
+    setMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <a href="#home" className="nav-logo">
+        <Link to="/" className="nav-logo" style={{ textDecoration: 'none' }}>
           {personalInfo.firstName}<span>.</span>
-        </a>
+        </Link>
 
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <li key={link.id}>
-              <a
-                href={`#${link.id}`}
-                onClick={() => setMenuOpen(false)}
-                className={activeSection === link.id ? 'active' : ''}
-              >
-                {link.name}
-              </a>
+              {isHome ? (
+                <button
+                  onClick={() => scrollToSection(link.id)}
+                  className={`nav-scroll-btn ${activeSection === link.id ? 'active' : ''}`}
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <Link
+                  to={`/#${link.id}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
           <li>
@@ -46,13 +64,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a
-              href="#contact"
+            <button
+              onClick={() => scrollToSection('contact')}
               className="nav-cta"
-              onClick={() => setMenuOpen(false)}
             >
               <FaRocket /> Hire Me
-            </a>
+            </button>
           </li>
         </ul>
 
