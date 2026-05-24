@@ -4,7 +4,6 @@ import {
   FaBriefcase, FaGithub, FaDownload, FaLinkedinIn,
 } from 'react-icons/fa';
 import { personalInfo } from '../data/personalInfo';
-import { personalInfo } from '../data/personalInfo';
 
 const About = () => {
   const highlights = [
