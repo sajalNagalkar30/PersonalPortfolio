@@ -7,12 +7,21 @@ import { personalInfo } from '../data/personalInfo';
 
 const About = () => {
   const highlights = [
-    { icon: '🎯', text: 'Clean Architecture & BLoC Pattern Expert' },
-    { icon: '⚡', text: '85% Code Coverage with TDD Approach' },
-    { icon: '🚀', text: 'CI/CD Pipelines — 60% Faster Deployments' },
-    { icon: '🔐', text: 'Enterprise Security — SSL Pinning & JWT Auth' },
-    { icon: '🏆', text: 'Star of the Quarter Award — Q4 2021' },
-    { icon: '🌍', text: 'Active Flutter Open Source Contributor' },
+    { icon: '🎯', text: 'Clean Architecture & BLoC Expert' },
+    { icon: '⚡', text: '85% Code Coverage with TDD' },
+    { icon: '🚀', text: 'CI/CD — 60% Faster Deployments' },
+    { icon: '🔐', text: 'SSL Pinning & JWT Auth' },
+    { icon: '🏆', text: 'Star of the Quarter — Q4 2021' },
+    { icon: '🌍', text: 'Active Flutter Open Source' },
+  ];
+
+  const details = [
+    { icon: <FaMapMarkerAlt />, label: 'Location', value: personalInfo.location },
+    { icon: <FaEnvelope />, label: 'Email', value: personalInfo.email },
+    { icon: <FaPhone />, label: 'Phone', value: personalInfo.phone },
+    { icon: <FaBriefcase />, label: 'Experience', value: `${personalInfo.stats.yearsExperience}+ Years` },
+    { icon: <FaGithub />, label: 'GitHub', value: personalInfo.githubUsername },
+    { icon: <FaLinkedinIn />, label: 'Work Mode', value: personalInfo.workMode },
   ];
 
   return (
@@ -37,49 +46,19 @@ const About = () => {
                       <span className="code-var">sajal</span> ={' '}
                       <span className="code-bracket">{'{'}</span>
                     </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">name</span>:{' '}
-                      <span className="code-string">"Sajal Nagalkar"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">role</span>:{' '}
-                      <span className="code-string">"Flutter & Full Stack"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">experience</span>:{' '}
-                      <span className="code-string">"4.4 years"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">location</span>:{' '}
-                      <span className="code-string">"Mumbai, India"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">company</span>:{' '}
-                      <span className="code-string">"Parity Cube"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">users</span>:{' '}
-                      <span className="code-string">"100K+"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">crashFree</span>:{' '}
-                      <span className="code-string">"99%"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">openSource</span>:{' '}
-                      <span className="code-string">"Active 🟢"</span>,
-                    </span>
-                    <span className="code-line">
-                      &nbsp;&nbsp;<span className="code-property">status</span>:{' '}
-                      <span className="code-string">"Available 🟢"</span>,
-                    </span>
-                    <span className="code-line">
-                      <span className="code-bracket">{'}'}</span>;
-                    </span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">name</span>: <span className="code-string">"Sajal Nagalkar"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">role</span>: <span className="code-string">"Flutter & Full Stack"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">experience</span>: <span className="code-string">"4.4 years"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">location</span>: <span className="code-string">"Mumbai, India"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">company</span>: <span className="code-string">"Parity Cube"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">users</span>: <span className="code-string">"100K+"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">crashFree</span>: <span className="code-string">"99%"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">openSource</span>: <span className="code-string">"Active 🟢"</span>,</span>
+                    <span className="code-line">&nbsp;&nbsp;<span className="code-property">status</span>: <span className="code-string">"Available 🟢"</span>,</span>
+                    <span className="code-line"><span className="code-bracket">{'}'}</span>;</span>
                   </div>
                 </div>
               </div>
-
               <div className="experience-badge">
                 <span className="number">{personalInfo.stats.yearsExperience}+</span>
                 <span className="text">Years of Experience</span>
@@ -88,26 +67,19 @@ const About = () => {
           </div>
 
           <div className="about-content">
-            <h3>
-              Flutter Developer &amp;{' '}
-              <span className="highlight">Full Stack Engineer</span>
-            </h3>
+            <h3>Flutter Developer &amp; <span className="highlight">Full Stack Engineer</span></h3>
 
             <p className="about-text">
-              I'm <strong>{personalInfo.name}</strong>, a dedicated Flutter Developer
-              with <strong>{personalInfo.stats.yearsExperience} years</strong> of hands-on
-              experience designing, developing, and deploying cross-platform mobile
-              applications for Android and iOS. I've successfully delivered apps
-              serving over <strong>{personalInfo.stats.activeUsers} users</strong> with{' '}
+              I'm <strong>{personalInfo.name}</strong>, a dedicated Flutter Developer with{' '}
+              <strong>{personalInfo.stats.yearsExperience} years</strong> of hands-on experience
+              building cross-platform apps serving over{' '}
+              <strong>{personalInfo.stats.activeUsers} users</strong> with{' '}
               <strong>{personalInfo.stats.crashFreeRate} crash-free rates</strong>.
             </p>
 
             <p className="about-text">
-              Currently at <strong>Parity Cube Pvt. Ltd.</strong> as a Flutter &amp;
-              Full Stack Developer in the fintech domain. Proficient in Clean
-              Architecture, BLoC, REST API integration, and Firebase. Expanded into
-              full-stack with <strong>React.js, Node.js, and MongoDB</strong> —
-              including enterprise security with JWT, SSL pinning, and CI/CD pipelines.
+              Currently at <strong>Parity Cube Pvt. Ltd.</strong> as a Flutter & Full Stack Developer.
+              Proficient in Clean Architecture, BLoC, REST APIs, Firebase, React.js, Node.js, and MongoDB.
             </p>
 
             <div className="about-highlights">
@@ -120,60 +92,22 @@ const About = () => {
             </div>
 
             <div className="about-details">
-              <div className="about-detail-item">
-                <div className="icon"><FaMapMarkerAlt /></div>
-                <div className="info">
-                  <label>Location</label>
-                  <span>Pune, Maharashtra</span>
+              {details.map((item, idx) => (
+                <div className="about-detail-item" key={idx}>
+                  <div className="icon">{item.icon}</div>
+                  <div className="info">
+                    <label>{item.label}</label>
+                    <span>{item.value}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="about-detail-item">
-                <div className="icon"><FaEnvelope /></div>
-                <div className="info">
-                  <label>Email</label>
-                  <span>{personalInfo.email}</span>
-                </div>
-              </div>
-              <div className="about-detail-item">
-                <div className="icon"><FaPhone /></div>
-                <div className="info">
-                  <label>Phone</label>
-                  <span>{personalInfo.phone}</span>
-                </div>
-              </div>
-              <div className="about-detail-item">
-                <div className="icon"><FaBriefcase /></div>
-                <div className="info">
-                  <label>Experience</label>
-                  <span>{personalInfo.stats.yearsExperience}+ Years</span>
-                </div>
-              </div>
-              <div className="about-detail-item">
-                <div className="icon"><FaGithub /></div>
-                <div className="info">
-                  <label>GitHub</label>
-                  <span>{personalInfo.githubUsername}</span>
-                </div>
-              </div>
-              <div className="about-detail-item">
-                <div className="icon"><FaLinkedinIn /></div>
-                <div className="info">
-                  <label>Work Mode</label>
-                  <span>Remote / Hybrid</span>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="about-buttons">
               <a href="#contact" className="btn btn-primary">
                 Let's Work Together <FaDownload />
               </a>
-              <a
-                href={personalInfo.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-secondary"
-              >
+              <a href={personalInfo.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
                 <FaGithub /> GitHub
               </a>
             </div>
