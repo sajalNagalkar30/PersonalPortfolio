@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,8 +12,9 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ResumePage from './components/ResumePage';
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <Navbar />
@@ -30,6 +32,17 @@ function App() {
       <Footer />
       <ScrollToTop />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/resume" element={<ResumePage />} />
+      </Routes>
+    </Router>
   );
 }
 

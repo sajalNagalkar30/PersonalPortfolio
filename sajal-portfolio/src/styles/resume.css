@@ -1,0 +1,339 @@
+.resume-page {
+  min-height: 100vh;
+  background: var(--dark);
+}
+
+/* Top Bar */
+.resume-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: rgba(10,10,20,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.back-btn:hover { color: var(--white); }
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: var(--gradient-1);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.download-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* Resume Wrapper */
+.resume-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+.resume-doc {
+  background: #ffffff;
+  color: #1a1a2e;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+/* Header */
+.resume-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 36px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.resume-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.resume-tagline {
+  color: #00d4aa;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.resume-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.resume-header-right a,
+.resume-header-right span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: color 0.2s;
+}
+
+.resume-header-right a:hover { color: #00d4aa; }
+
+/* Sections */
+.resume-section {
+  padding: 28px 40px;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.resume-section:last-child { border-bottom: none; }
+
+.resume-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #6366f1;
+}
+
+/* Summary */
+.resume-summary {
+  color: #444;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+/* Skills */
+.resume-skills-grid { display: flex; flex-direction: column; gap: 6px; }
+
+.resume-skill-row {
+  display: flex;
+  gap: 10px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.skill-label {
+  color: #1a1a2e;
+  font-weight: 700;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.skill-value { color: #444; }
+
+/* Job */
+.resume-job { margin-bottom: 24px; }
+.resume-job:last-child { margin-bottom: 0; }
+
+.resume-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.resume-job-header h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.resume-company {
+  font-size: 0.82rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.resume-date {
+  font-size: 0.78rem;
+  color: #666;
+  white-space: nowrap;
+  background: #f0f0f8;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.resume-job-desc {
+  font-size: 0.84rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.resume-project-block {
+  background: #f8f9ff;
+  border-left: 3px solid #6366f1;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 12px;
+}
+
+.resume-project-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.resume-project-block ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.resume-project-block ul li {
+  font-size: 0.82rem;
+  color: #444;
+  margin-bottom: 4px;
+  line-height: 1.55;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.resume-tags span {
+  background: #eef0ff;
+  color: #6366f1;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Education */
+.resume-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.resume-edu-item {
+  background: #f8f9ff;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e0e4ff;
+}
+
+.resume-edu-item h3 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.resume-edu-item p {
+  font-size: 0.78rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.resume-edu-item span {
+  font-size: 0.75rem;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* Certifications */
+.resume-cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.resume-cert-item {
+  display: flex;
+  gap: 12px;
+  background: #f8f9ff;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e0e4ff;
+}
+
+.cert-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cert-icon.award { color: #f59e0b; }
+.cert-icon.cert  { color: #6366f1; }
+
+.resume-cert-item h3 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.resume-cert-item p {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Additional */
+.resume-additional {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.resume-additional div {
+  font-size: 0.82rem;
+  color: #444;
+  background: #f8f9ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.resume-additional strong { color: #1a1a2e; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-topbar { padding: 12px 20px; }
+
+  .resume-header {
+    flex-direction: column;
+    padding: 24px 24px;
+  }
+
+  .resume-header-right { align-items: flex-start; }
+
+  .resume-section { padding: 20px 24px; }
+
+  .resume-job-header { flex-direction: column; gap: 6px; }
+
+  .resume-edu-grid,
+  .resume-cert-grid,
+  .resume-additional { grid-template-columns: 1fr; }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaRocket } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaRocket, FaFileAlt } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { personalInfo } from '../data/personalInfo';
 
@@ -35,6 +36,15 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              to="/resume"
+              className="nav-resume-btn"
+              onClick={() => setMenuOpen(false)}
+            >
+              <FaFileAlt /> Resume
+            </Link>
+          </li>
           <li>
             <a
               href="#contact"

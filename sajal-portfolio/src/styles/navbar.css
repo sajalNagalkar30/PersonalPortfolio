@@ -64,6 +64,29 @@
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
+.nav-resume-btn {
+  padding: 8px 18px !important;
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  font-size: 0.88rem !important;
+}
+
+.nav-resume-btn:hover {
+  color: var(--white) !important;
+  border-color: var(--primary) !important;
+  background: rgba(99,102,241,0.1) !important;
+}
+
+.nav-resume-btn::after { display: none !important; }
+
 .nav-cta {
   padding: 10px 24px !important;
   background: var(--gradient-1) !important;
