@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   FaMapMarkerAlt, FaEnvelope, FaPhone,
   FaPaperPlane, FaGithub, FaLinkedinIn,
-  FaClock, FaBriefcase, FaCheckCircle,
+  FaClock, FaBriefcase, FaCheckCircle, FaExclamationCircle,
 } from 'react-icons/fa';
 import { personalInfo } from '../data/personalInfo';
 
@@ -17,15 +17,26 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }),
+      });
       setSubmitStatus('success');
-      setIsSubmitting(false);
       setFormData({ name: '', email: '', subject: '', phone: '', message: '' });
+    } catch (err) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    }
   };
 
   const contactItems = [
@@ -101,6 +112,11 @@ const Contact = () => {
             {submitStatus === 'success' && (
               <div className="submit-success">
                 <FaCheckCircle /> Thank you! Message sent successfully. I'll reply soon!
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="submit-error">
+                <FaExclamationCircle /> Something went wrong. Please try again or email me directly.
               </div>
             )}
 

@@ -205,6 +205,21 @@
   gap: 10px;
 }
 
+.submit-error {
+  background: rgba(239,68,68,0.12);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .spinner {
   width: 18px; height: 18px;
   border: 2px solid rgba(255,255,255,0.3);
