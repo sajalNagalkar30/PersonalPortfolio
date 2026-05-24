@@ -366,10 +366,28 @@
 @media (max-width: 768px) {
   .hero-name { font-size: 2.6rem; }
   .hero-title { font-size: 1.3rem; }
-  .hero-image-wrapper { width: 300px; height: 360px; }
+  .hero-image-wrapper { width: 320px; height: 420px; }
   .hero-avatar { width: 240px; height: 300px; }
   .avatar-icon { font-size: 90px; }
-  .floating-card, .floating-badge { display: none; }
+
+  .floating-card {
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .floating-card-text h4 { font-size: 0.75rem; }
+  .floating-card-text p  { font-size: 0.65rem; }
+  .floating-icon { width: 32px; height: 32px; font-size: 1rem; }
+
+  .floating-card-1 { top: 10px;  left: -30px; }
+  .floating-card-2 { bottom: 100px; right: -30px; }
+  .floating-card-3 { bottom: 10px;  left: -20px; }
+
+  .floating-badge {
+    top: -12px; right: -10px;
+    padding: 7px 12px;
+    font-size: 0.72rem;
+  }
 }
 
 @media (max-width: 480px) {
