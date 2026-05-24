@@ -7,6 +7,7 @@ import { personalInfo } from '../data/personalInfo';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [expandedTags, setExpandedTags] = useState({});
 
   const filteredProjects =
     activeFilter === 'All'
@@ -94,11 +95,17 @@ const Projects = () => {
                 </div>
 
                 <div className="project-tags-new">
-                  {project.tags.slice(0, 6).map((tag, idx) => (
+                  {(expandedTags[project.id] ? project.tags : project.tags.slice(0, 6)).map((tag, idx) => (
                     <span className="project-tag-new" key={idx}>{tag}</span>
                   ))}
-                  {project.tags.length > 6 && (
-                    <span className="project-tag-more">+{project.tags.length - 6}</span>
+                  {project.tags.length > 6 && !expandedTags[project.id] && (
+                    <span
+                      className="project-tag-more"
+                      onClick={() => setExpandedTags(prev => ({ ...prev, [project.id]: true }))}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      +{project.tags.length - 6}
+                    </span>
                   )}
                 </div>
 
