@@ -4,6 +4,7 @@ import {
   FaBriefcase, FaGithub, FaDownload, FaLinkedinIn,
 } from 'react-icons/fa';
 import { personalInfo } from '../data/personalInfo';
+import { personalInfo } from '../data/personalInfo';
 
 const About = () => {
   const highlights = [
@@ -51,7 +52,7 @@ const About = () => {
                     </span>
                     <span className="code-line">
                       &nbsp;&nbsp;<span className="code-property">location</span>:{' '}
-                      <span className="code-string">"Pune, India"</span>,
+                      <span className="code-string">"Mumbai, India"</span>,
                     </span>
                     <span className="code-line">
                       &nbsp;&nbsp;<span className="code-property">company</span>:{' '}
